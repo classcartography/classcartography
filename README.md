@@ -5,8 +5,9 @@ ClassCartography
 Server
 ------
 
-IP: 54.235.171.104
-SSH as ubuntu
+ssh ubuntu@54.235.171.104
+
+SendGrid account details at ~ubuntu/accounts.txt
 
 http://ec2-54-235-171-104.compute-1.amazonaws.com/
 
