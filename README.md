@@ -5,11 +5,14 @@ ClassCartography
 Server
 ------
 
-ssh ubuntu@54.235.171.104
+ * http://ec2-54-235-171-104.compute-1.amazonaws.com/
+ * ssh ubuntu@54.235.171.104
 
-SendGrid account details at ~ubuntu/accounts.txt
+Credentials: 
 
-http://ec2-54-235-171-104.compute-1.amazonaws.com/
+ * SendGrid: see ~ubuntu/accounts.txt
+ * MySQL: see ~ubuntu/accounts.txt
+
 
 Form Questions
 --------------
