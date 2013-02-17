@@ -35,10 +35,10 @@ Graph = {
   drawResponses: function(responseData) {
     // Set up D3 Graph
     var margin = {top: 10, right: 10, bottom: 100, left: 40},
-        margin2 = {top: 330, right: 10, bottom: 20, left: 40},
-        width = 720 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom,
-        height2 = 400 - margin2.top - margin2.bottom;
+        margin2 = {top: 280, right: 10, bottom: 20, left: 40},
+        width = 700 - margin.left - margin.right,
+        height = 350 - margin.top - margin.bottom,
+        height2 = 350 - margin2.top - margin2.bottom;
 
     var parseDate = d3.time.format("%Y-%m-%d").parse;
 

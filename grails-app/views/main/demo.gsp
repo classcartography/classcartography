@@ -11,7 +11,7 @@
     <div id="student_stats_window" class="span9">
       <div id="graph_area" class="row">
         <div class="span9">
-          <img alt="Sample graph" src="http://www.austrade.gov.au/Images/UserUploadedImages/3510/ISEnrolment_Aust_Graph1994_2007.gif" />
+          <g:render template="/user/graph" />
         </div>
       </div>
 
