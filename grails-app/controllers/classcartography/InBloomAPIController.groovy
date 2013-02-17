@@ -8,7 +8,7 @@ class InBloomAPIController {
    
     def auth () {
     	def hostname = InetAddress.getLocalHost().getHostName()
-    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri="+hostname+"/login"
+    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri="+hostname+"/classcartography/login"
   		redirect(url: "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri=http://localhost:8080/classcartography/login")
   		//redirect(url: fullurl)
   	}
@@ -16,7 +16,7 @@ class InBloomAPIController {
   	def saveSession () {
   	    def tokenResp
   	    def fullurl = "http://localhost:8080/classcartography"
-  	    //def fullurl = InetAddress.getLocalHost().getHostName()
+  	    //def fullurl = ""+InetAddress.getLocalHost().getHostName()+"/classcartography"
   	    withHttp(uri: "https://api.sandbox.inbloom.org") {
            tokenResp = get(path : '/api/oauth/token', query : [client_id:'UzMIy7jMGB', client_secret:'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx', code:params.code, redirect_uri:fullurl])
         }       
