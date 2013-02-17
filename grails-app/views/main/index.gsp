@@ -10,8 +10,9 @@
     </div>
     <div id="student_stats_window" class="span9">
       <div id="graph_area" class="row">
-        <div class="span9"></div>
-        <!-- TODO: Make partial template file in students/_graph -->
+        <div class="span9">
+          <g:render template="/user/graph" />
+        </div>
       </div>
 
       <hr>
