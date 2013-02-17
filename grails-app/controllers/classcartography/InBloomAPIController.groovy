@@ -118,13 +118,24 @@ class InBloomAPIController {
         
         def grades = []
         for (i in gradesResp) {
-        	grades.add([date:i.get("dateFulfilled"), grade:i.get("letterGradeEarned")])
+        	if (i.get("studentId").equals(params.student_id)) {
+        		grades.add([date:i.get("dateFulfilled"), grade:i.get("letterGradeEarned")])
+        	}
         }
         
         render grades
   	}
   	
   	def getAttendance () {
-  	
+  	  	def token = session.getAttribute("token")
+        def attResp
+        def fullpath = "/api/rest/v1.1/students/"+params.student_id+"/attendances"
+        withHttp(uri: "https://api.sandbox.inbloom.org") {
+           attResp = get(path : fullpath, headers : [Authorization:'Bearer '+token])
+        }
+        
+        for (i in attResp) {
+        	render i.get("schoolYearAttendance")
+        }
   	}
 }
