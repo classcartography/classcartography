@@ -6,7 +6,7 @@
 	</head>
 	<body>
     <div id="sidebar" class="span3">
-      <g:render template="/shared/sidebar" />
+      <g:render template="/user/sidebar" />
     </div>
     <div id="student_stats_window" class="span9">
       <div id="graph_area" class="row">

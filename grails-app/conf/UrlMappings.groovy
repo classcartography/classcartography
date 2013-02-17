@@ -14,8 +14,11 @@ class UrlMappings {
 
 		"/"(controller:"main", action:"index")
 		"/demo"(controller:"main", action:"demo")
-
-    "/survey/$survey_id/respond"(controller:"survey", action:"respond")
+  
+    "/surveys"(controller:"survey", action:"list")
+    "/surveys/demo"(controller:"survey", action:"demo")
+    "/surveys/$id/show"(controller:"survey", action:"show")
+    "/surveys/$survey_id/respond"(controller:"survey", action:"respond")
 
 		"500"(view:'/error')
 	}
