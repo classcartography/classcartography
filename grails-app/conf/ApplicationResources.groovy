@@ -4,5 +4,6 @@ modules = {
         resource url:'http://code.jquery.com/ui/1.10.1/jquery-ui.js'
         resource url:'js/application.js'
         resource url:'js/survey.js'
+        resource url:'js/graph.js'
     }
 }
