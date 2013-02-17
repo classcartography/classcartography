@@ -5,6 +5,16 @@
 		<title>ClassCartographer</title>
 	</head>
 	<body>
-    <h1>Class Cartographer</h1>
+    <div class="span3">
+      <g:render template="/shared/sidebar" />
+    </div>
+    <div class="span9">
+      <div>
+        Graph goes here
+      </div>
+      <div>
+        Feedback data goes here
+      </div>
+    </div>
 	</body>
 </html>
