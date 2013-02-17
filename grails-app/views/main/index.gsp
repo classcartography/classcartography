@@ -23,6 +23,11 @@
         </div>
 
         <div id="semantic_analysis" class="span4">
+        
+        <a href="getCoursesForCurrentUser">get courses</a></br>
+        <a href="getStudentsForCourse?course_id=088fc0cffc2a91c8bb7b82e076b60ccfc8e37959_id">get students</a></br>
+        <a href="getGrades?course_id=088fc0cffc2a91c8bb7b82e076b60ccfc8e37959_id&student_id=60c6df1b0fbe46558b4ab6b66469cb75f33fca0b_id">get grades</a></br>
+        <a>get attendance</a></br>
         </div>
       </div>
     </div>
