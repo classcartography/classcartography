@@ -25,14 +25,9 @@
 	<body>
     <g:render template="/shared/header" />
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <g:render template="/shared/sidebar" />
-        </div>
-        <div class="span9">
-          <g:layoutBody/>
-        </div>
+    <div class="container">
+      <div class="row">
+        <g:layoutBody/>
 
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
       </div>
