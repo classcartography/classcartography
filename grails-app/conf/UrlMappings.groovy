@@ -21,5 +21,10 @@ class UrlMappings {
     "/surveys/$survey_id/respond"(controller:"survey", action:"respond")
 
 		"500"(view:'/error')
+		
+		"/survey/$surveyId/student/$userId" (controller: "survey", action: "index")
+		"/survey/$surveyId/student/$userId/save" (controller: "survey", action: "save")
+		"/survey/$surveyId/answers" (controller: "survey", action: "allAnswers")
+		"/survey/$surveyId/student/$userId/answers" (controller: "survey", action: "studentAnswers")
 	}
 }
