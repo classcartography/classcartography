@@ -8,6 +8,8 @@ class UrlMappings {
 		}
 
 		"/"(controller:"main", action:"index")
+		"/demo"(controller:"main", action:"demo")
+
 		"500"(view:'/error')
 	}
 }

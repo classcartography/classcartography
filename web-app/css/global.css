@@ -5,3 +5,28 @@
 body {
   padding-top: 90px;
 }
+
+.gravatar {
+  border: 1px solid #d44413;
+}
+
+
+/*
+ * Sidebar Roster
+ */
+
+#roster { }
+
+#roster .student .student_name { font-size: 1.5em; }
+
+
+/*
+ * Word Frequency Graphs
+ */
+
+#word_frequency .progress { margin-bottom: 8px; }
+#word_frequency .bar {
+  text-align: left;
+  padding-left: 4px;
+}
+
