@@ -86,7 +86,7 @@ class InBloomAPIController {
         def studentsResp
         withHttp(uri: studentsUrl) {
         	studentsResp = get(headers : [Authorization:'Bearer '+token])
-        }
+        }	
 		
 		def students = []
         for (i in studentsResp) {
@@ -94,5 +94,37 @@ class InBloomAPIController {
         }
         
         render students
+  	}
+  	
+  	def getGrades () {
+  	  	def token = session.getAttribute("token")
+        def sectionsResp
+        def fullpath = "/api/rest/v1.1/sections/"+params.course_id
+        withHttp(uri: "https://api.sandbox.inbloom.org") {
+           sectionsResp = get(path : fullpath, headers : [Authorization:'Bearer '+token])
+        }
+        def arr = sectionsResp.get("links")
+        def gradesUrl
+        for (i in arr) {
+         	if (i.get("rel").equals("getStudentGradebookEntries")) {
+         	  	gradesUrl = i.get("href")
+         	}
+        }
+        
+        def gradesResp
+        withHttp(uri: gradesUrl) {
+        	gradesResp = get(headers : [Authorization:'Bearer '+token])
+        }
+        
+        def grades = []
+        for (i in gradesResp) {
+        	grades.add([date:i.get("dateFulfilled"), grade:i.get("letterGradeEarned")])
+        }
+        
+        render grades
+  	}
+  	
+  	def getAttendance () {
+  	
   	}
 }
