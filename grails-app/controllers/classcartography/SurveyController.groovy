@@ -8,7 +8,6 @@ class SurveyController {
 
     def index() { 
     	questions = Question.list();
-    	render questions as JSON;
     }
 
     def show() { 
@@ -83,6 +82,42 @@ class SurveyController {
 			aUser.save(failOnError: true);
 
 		}
+
+    }
+
+    def createSurvey() { 
+
+	}
+
+    def saveSurvey() { 
+
+    	def aSurvey = new Survey();
+    	aSurvey.createDate = new Date();
+    	aSurvey.description = params.surveyDescription;
+    	aSurvey.courseId = "123";
+    	aSurvey.creatorId = "abc";
+		aSurvey.save(failOnError:true);
+		for(int i=0;i<5;i++){
+
+	    	questions = Question.list();
+			def q = questions.get(i);
+			def surveyQuestion = new SurveyQuestion();
+			surveyQuestion.sequence = i+1;
+			surveyQuestion.question = q;
+			surveyQuestion.survey = aSurvey;
+			surveyQuestion.save(failOnError: true);
+			aSurvey.addToQuestions(surveyQuestion);
+
+		}
+		def surveyUser = new SurveyUser();
+		surveyUser.sentDate = new Date();
+		surveyUser.user = User.get(11);
+		surveyUser.survey = aSurvey;
+		surveyUser.save(failOnError:true);
+		aSurvey.addToUsers(surveyUser);
+
+		aSurvey.save(failOnError:true);
+    	redirect(action:index)
 
     }
     
