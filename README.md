@@ -14,6 +14,14 @@ Credentials:
  * MySQL: see ~ubuntu/accounts.txt
 
 
+Deployment
+----------
+
+Just run ./deploy.sh on your local machine.  It will pull the newest
+code from the repo (NOT your local copy), deploy it and restart
+tomcat.
+
+
 Form Questions
 --------------
 1. How much did you learn today/week/month? Scale of 1-10.
