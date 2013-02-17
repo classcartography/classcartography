@@ -3,7 +3,7 @@ package classcartography
 class Question {
 
 	String question;
-	String type;
+	String responseType;
 	
 	static hasMany = [surveys:SurveyQuestion]
 	

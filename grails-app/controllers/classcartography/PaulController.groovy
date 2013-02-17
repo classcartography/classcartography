@@ -12,6 +12,21 @@ class PaulController {
         }
         render html
     }
+
+    def insert() {
+
+        def q1 = new Question(question: "How much did you learn today?", responseType:"NUMBER");
+        q.save()
+        def q1get = Question.get(1)
+        asset 1 == q1get.id
+        def q2 = new Question(question: "What was your favorite part of class?", responseType:"TEXT");
+        q2.save()
+        def q3 = new Question(question: "What was your least favorite part of class?", responseType:"TEXT");
+        q3.save()
+        def q4 = new Question(question: "Describe one new thing you learned today.", responseType:"TEXT");
+        q4.save()
+
+    }
     
     def login() {
         def writer = new StringWriter()

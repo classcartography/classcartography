@@ -6,7 +6,7 @@ class User {
 	String type
 	String email
 
-	static hasMany = [surveys:SurveyUser]
+	static hasMany = [surveys:SurveyUser, responses:Response]
 	
     static constraints = {
     }
