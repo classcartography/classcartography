@@ -1,3 +1,6 @@
+// Thanks to mbostock for almost all of the following code :D
+// http://bl.ocks.org/mbostock/1667367
+
 var Graph;
 
 Graph = {
