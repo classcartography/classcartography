@@ -13,8 +13,8 @@
       <ul class="nav">
         <li><g:link controller="main" action="index">Dashboard</g:link></li>
         <li><g:link controller="main" action="demo">Dashboard-Demo</g:link></li>
-        <li><g:link controller="survey" action="list">Feedback Demo</g:link></li>
-        <li><g:link controller="survey" action="demo">Feedback Management</g:link></li>
+        <li><g:link controller="survey" action="list">Feedback</g:link></li>
+        <li><g:link controller="survey" action="demo">Feedback-Demo</g:link></li>
       </ul>
     </div>
   </div>
