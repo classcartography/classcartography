@@ -1,0 +1,64 @@
+Machine: m1.medium 64-bit w/Ubuntu 12.10
+
+Steps:
+
+ * add this to /etc/environment
+
+   export LC_ALL=en_US.UTF-8
+   
+   Otherwise half of ubuntu complains about locale errors.
+
+ * packages
+
+   sudo apt-get update
+   sudo apt-get install nginx-full
+   sudo apt-get install mysql-server mysql-client
+   sudo apt-get install openjdk-7-jre-headless
+   sudo apt-get install openjdk-7-jdk
+   sudo apt-get install unzip
+   sudo apt-get install git
+
+ * wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.2.0.zip 
+ * unzip grails-2.2.0.zip 
+ 
+ * Create ~/custom-env.sh:
+
+   export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+   export GRAILS_HOME=~/grails-2.2.0
+   export PATH=$GRAILS_HOME/bin:$PATH
+ 
+ * add ". ~/custom-env.sh" to ~/.bashrc
+
+ * create classcartography.conf in /etc/nginx/conf.d:
+
+   server {
+       listen 80;
+       server_name ec2-54-235-171-104.compute-1.amazonaws.com;
+       location / {
+           proxy_pass http://127.0.0.1:8080/;
+           proxy_redirect off;
+   
+           proxy_set_header   Host             $host;
+           proxy_set_header   X-Real-IP        $remote_addr;
+           proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+           proxy_max_temp_file_size 0;
+   
+           client_max_body_size       10m;
+           client_body_buffer_size    128k;
+   
+           proxy_connect_timeout      90;
+           proxy_send_timeout         90;
+           proxy_read_timeout         90;
+   
+           proxy_buffer_size          4k;
+           proxy_buffers              4 32k;
+           proxy_busy_buffers_size    64k;
+           proxy_temp_file_write_size 64k;
+    
+           auth_basic            "Restricted";
+           auth_basic_user_file  /home/ubuntu/classcartography.htpasswd;
+       }
+   }      
+
+ * create ~ubuntu/classcartography.htpasswd with the login and
+   encrypted password you want to use for http auth
