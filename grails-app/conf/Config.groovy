@@ -65,10 +65,14 @@ environments {
     development {
         grails.logging.jul.usebridge = true
         grails.serverURL = "http://localhost:8080/classcartography"
+        grails.clientId = "UzMIy7jMGB"
+        grails.secret = "SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx"
     }
     production {
         grails.logging.jul.usebridge = false
         grails.serverURL = "http://ec2-54-235-171-104.compute-1.amazonaws.com/classcartography"
+        grails.clientId = "rKHMPYY3o4"
+        grails.secret = "jL2fbbBTbj5DMh42qQi7QLjbun3pvPUZKeZHF8mizpzFzsFW"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
