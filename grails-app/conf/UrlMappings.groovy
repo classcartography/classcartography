@@ -3,7 +3,7 @@ class UrlMappings {
 	static mappings = {
 	
 		"/auth"(controller: "inBloomAPI", action: "auth")
-		"/login"(controller: "inBloomAPI", action: "getToken")
+		"/login"(controller: "inBloomAPI", action: "saveSession")
 		"/logout"(controller: "inBloomAPI", action: "logout")
 
 		"/$controller/$action?/$id?"{
