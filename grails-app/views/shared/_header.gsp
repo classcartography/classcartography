@@ -1,20 +1,21 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="brand" href="/">Class Cartography</a>
-      <div class="nav-collapse collapse">
-        <p class="navbar-text pull-right">
-          Logged in as <a href="#" class="navbar-link">Username</a>
-        </p>
-        <ul class="nav">
-          <li><a href="/dashboard">Dashboard</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
+      <p class="navbar-text pull-right">
+        <g:if test="${session.token}">
+          Welcome ${session.name}! <a href="logout" class="navbar-link">Logout</a>
+	    </g:if>
+        <g:else>
+          <a class="navbar-link" href="auth">Login </a>
+        </g:else>
+      </p>
+      <ul class="nav">
+        <li><g:link controller="main" action="index">Dashboard</g:link></li>
+        <li><g:link controller="main" action="demo">Dashboard-Demo</g:link></li>
+        <li><g:link controller="survey" action="list">Surveys</g:link></li>
+        <li><g:link controller="survey" action="demo">Surveys-Demo</g:link></li>
+      </ul>
     </div>
   </div>
 </div>
