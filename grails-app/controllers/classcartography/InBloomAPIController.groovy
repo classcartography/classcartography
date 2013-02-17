@@ -8,7 +8,7 @@ class InBloomAPIController {
    
     def auth () {
     	def hostname = grailsApplication.config.grails.serverURL
-    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id="+grailsApplication.config.grails.clientId+"&response_type=code&redirect_uri="+hostname+"/login"
+    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri="+hostname+"/login"
  		redirect(url: fullurl)
   	}
   	
@@ -16,7 +16,7 @@ class InBloomAPIController {
   	    def tokenResp
   	    def fullurl = grailsApplication.config.grails.serverURL
   	    withHttp(uri: "https://api.sandbox.inbloom.org") {
-           tokenResp = get(path : '/api/oauth/token', query : [client_id:grailsApplication.config.grails.clientId, client_secret:grailsApplication.config.grails.secret, code:params.code, redirect_uri:fullurl])
+           tokenResp = get(path : '/api/oauth/token', query : [client_id:'UzMIy7jMGB', client_secret:'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx', code:params.code, redirect_uri:fullurl])
         }       
         def token = tokenResp.get("access_token")
         session.setAttribute("token", token)
