@@ -19,8 +19,12 @@ environments {
     }
     test {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+                       driverClassName = "com.mysql.jdbc.Driver"
+                        username = "plee"
+                        password = "xiongmao"
+                        dbCreate = "update"
+                        url = "jdbc:mysql://localhost:3306/classcartography"
+
         }
     }
     production {
