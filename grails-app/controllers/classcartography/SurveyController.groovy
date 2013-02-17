@@ -111,7 +111,7 @@ class SurveyController {
 		}
 		def surveyUser = new SurveyUser();
 		surveyUser.sentDate = new Date();
-		surveyUser.user = User.get(11);
+		surveyUser.user = User.get(10);
 		surveyUser.survey = aSurvey;
 		surveyUser.save(failOnError:true);
 		aSurvey.addToUsers(surveyUser);
@@ -126,7 +126,10 @@ class SurveyController {
         //[surveys: Survey.all()]
     }
     
-    def demo() { }
+    def demo() { 
+    	def map = [surveyList:Survey.list()];
+    	render(view: "demo", model: map)
+    }
 
     def respond() {
         def survey = Survey.get(params.survey_id)
