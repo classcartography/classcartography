@@ -4,10 +4,10 @@
       <a class="brand" href="/">Class Cartography</a>
       <p class="navbar-text pull-right">
         <g:if test="${session.token}">
-          Welcome ${session.name}! <a href="logout" class="navbar-link">Logout</a>
+          Welcome ${session.name}! - <g:link controller="inBloomAPI" action="logout" class="navbar-link">Logout</g:link>
 	    </g:if>
         <g:else>
-          <a class="navbar-link" href="auth">Login </a>
+          <g:link controller="inBloomAPI" action="auth" class="navbar-link">Login</g:link>
         </g:else>
       </p>
       <ul class="nav">
