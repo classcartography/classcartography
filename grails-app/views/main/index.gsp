@@ -23,6 +23,8 @@
         </div>
 
         <div id="semantic_analysis" class="span4">
+        
+        <a href="getCoursesForUser">get courses</a>
         </div>
       </div>
     </div>

@@ -23,7 +23,9 @@ class InBloomAPIController {
            sessionResp = get(path : '/api/rest/system/session/check', headers : [Authorization:'Bearer '+token])
         }
         session.setAttribute("name", sessionResp.get("full_name"))
-		redirect(controller:"main", action:"index")  	
+        //render sessionResp
+        
+		redirect(controller:"main", action:"index") 
 	}
   	
   	def logout () {
@@ -37,11 +39,30 @@ class InBloomAPIController {
         } // else logout failed
     }
   	
-  	def getStudents () {
-  	    def response
-  		withRest(uri:'http://api.sandbox.inbloom.org') {
-			response = get(path : '/api/rest/v1.1/students')
-  		}
-  		render response.getData()
+  	def getCourses () {
+  	    def token = session.getAttribute("token")
+        def homeResp
+        withHttp(uri: "https://api.sandbox.inbloom.org") {
+           homeResp = get(path : '/api/rest/v1.1/home', headers : [Authorization:'Bearer '+token])
+        }
+        def arr = homeResp.get("links")
+        def sections
+        for (i in arr) {
+         	if (i.get("rel").equals("getSections")) {
+         	  	sections = i.get("href")
+         	}
+        }
+        
+        def sectionsResp
+        withHttp(uri: sections) {
+        	sectionsResp = get(headers : [Authorization:'Bearer '+token])
+        }
+        
+        def courses = [];
+        for (i in sectionsResp) {
+        	courses.add(i.get("uniqueSectionCode"))
+        }
+        
+        render courses
   	}
 }
