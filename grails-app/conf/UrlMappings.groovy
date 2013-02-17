@@ -7,6 +7,7 @@ class UrlMappings {
 		"/logout"(controller: "inBloomAPI", action: "logout")
 		
 		"/getCoursesForUser"(controller: "inBloomAPI", action:"getCourses")
+		"/getStudentsForCourse"(controller: "inBloomAPI", action:"getStudents")
 
 		"/$controller/$action?/$id?"{
 			constraints {
