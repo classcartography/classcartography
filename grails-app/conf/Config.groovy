@@ -89,3 +89,13 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+oauth {
+        providers {
+            inbloom {
+                api = InBloomApi
+                key = 'UzMIy7jMGB'
+                secret = 'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx'
+            }
+        }
+    }
