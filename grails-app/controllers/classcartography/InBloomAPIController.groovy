@@ -7,16 +7,15 @@ class InBloomAPIController {
     def index () { }
    
     def auth () {
-    	def hostname = InetAddress.getLocalHost().getHostName()
-    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri="+hostname+"/classcartography/login"
-  		redirect(url: "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri=http://localhost:8080/classcartography/login")
-  		//redirect(url: fullurl)
+    	def hostname = grailsApplication.config.grails.serverURL
+    	def fullurl = "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri="+hostname+"/login"
+  		//redirect(url: "http://api.sandbox.inbloom.org/api/oauth/authorize?client_id=UzMIy7jMGB&response_type=code&redirect_uri=http://localhost:8080/classcartography/login")
+  		redirect(url: fullurl)
   	}
   	
   	def saveSession () {
   	    def tokenResp
-  	    def fullurl = "http://localhost:8080/classcartography"
-  	    //def fullurl = ""+InetAddress.getLocalHost().getHostName()+"/classcartography"
+  	    def fullurl = grailsApplication.config.grails.serverURL
   	    withHttp(uri: "https://api.sandbox.inbloom.org") {
            tokenResp = get(path : '/api/oauth/token', query : [client_id:'UzMIy7jMGB', client_secret:'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx', code:params.code, redirect_uri:fullurl])
         }       
@@ -28,6 +27,7 @@ class InBloomAPIController {
            sessionResp = get(path : '/api/rest/system/session/check', headers : [Authorization:'Bearer '+token])
         }
         session.setAttribute("name", sessionResp.get("full_name"))
+        session.setAttribute("server", fullurl)
         //render sessionResp 
         
 		redirect(controller:"main", action:"index") 

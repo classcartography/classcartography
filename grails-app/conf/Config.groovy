@@ -64,9 +64,11 @@ grails.gsp.enable.reload=true
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = "http://localhost:8080/classcartography"
     }
     production {
         grails.logging.jul.usebridge = false
+        grails.serverURL = "http://ec2-54-235-171-104.compute-1.amazonaws.com/classcartography"
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
