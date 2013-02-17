@@ -13,4 +13,4 @@ TEMP_DIR=$BUILD_DIR/`date -u +'%F-%I-%M-%S'`
 # The right way to solve it is to find the difference in environments,
 # but I don't have the time now.
 
-ssh ubuntu@54.235.171.104 ". ~/custom-env.sh && mkdir -p $TEMP_DIR && cd $TEMP_DIR && git clone git@github.com:chamarapaul/ClassCartography.git && cd ClassCartography && mkdir -p grails-app/migrations && ./scripts/build-and-deploy.sh"
+ssh ubuntu@54.235.171.104 ". ~/custom-env.sh && mkdir -p $TEMP_DIR && cd $TEMP_DIR && git clone git://github.com/chamarapaul/ClassCartography.git && cd ClassCartography && mkdir -p grails-app/migrations && ./scripts/build-and-deploy.sh"

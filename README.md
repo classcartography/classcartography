@@ -5,7 +5,7 @@ ClassCartography
 Server
 ------
 
- * http://ec2-54-235-171-104.compute-1.amazonaws.com/classcartography/
+ * http://ec2-54-235-171-104.compute-1.amazonaws.com/
  * ssh ubuntu@54.235.171.104
 
 Credentials: 
@@ -28,4 +28,5 @@ Form Questions
 2. Favorite part of class
 3. Least favorite part
 4. One new thing that you learned today?
+
 
