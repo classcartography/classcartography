@@ -17,14 +17,14 @@ class UrlMappings {
 			}
 		}
 
-		"/"(controller:"main", action:"index")
+		"/"(controller:"main", action:"login")
 		"/demo"(controller:"main", action:"demo")
   
-    "/surveys"(controller:"survey", action:"index")
-    "/survey/list"(controller:"survey", action:"index")
-    "/surveys/demo"(controller:"survey", action:"demo")
-    "/surveys/$id/show"(controller:"survey", action:"show")
-    "/surveys/$survey_id/respond"(controller:"survey", action:"respond")
+	    "/surveys"(controller:"survey", action:"index")
+	    "/survey/list"(controller:"survey", action:"index")
+	    "/surveys/demo"(controller:"survey", action:"demo")
+	    "/surveys/$id/show"(controller:"survey", action:"show")
+	    "/surveys/$survey_id/respond"(controller:"survey", action:"respond")
 
 		"500"(view:'/error')
 		

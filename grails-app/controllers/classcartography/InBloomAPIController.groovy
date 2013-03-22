@@ -16,7 +16,7 @@ class InBloomAPIController {
   	    def tokenResp
   	    def fullurl = grailsApplication.config.grails.serverURL
   	    withHttp(uri: "https://api.sandbox.inbloom.org") {
-           tokenResp = get(path : '/api/oauth/token', query : [client_id:'UzMIy7jMGB', client_secret:'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx', code:params.code, redirect_uri:'http://localhost:8080/classcartography/'])
+           tokenResp = get(path : '/api/oauth/token', query : [client_id:'UzMIy7jMGB', client_secret:'SN5oikX6ZhsE8h0RfQKqFR1DBW9eehNrag7jq4qL1VGzl6Bx', code:params.code, redirect_uri:'http://localhost:8080/classcartography/demo'])
         }       
         def token = tokenResp.get("access_token")
         session.setAttribute("token", token)
