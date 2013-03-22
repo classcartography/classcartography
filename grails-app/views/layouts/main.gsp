@@ -20,8 +20,11 @@
 	</head>
 	<body>
         <g:if test="${session.token}">
-		    <g:render template="/shared/header" />
-	    </g:if>	
+			<g:render template="/shared/header" />
+	    </g:if>
+        <g:else>
+			<g:render template="/shared/header-login" />
+        </g:else>
 
         <g:layoutBody/>
 
