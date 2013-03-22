@@ -29,7 +29,7 @@ class InBloomAPIController {
         session.setAttribute("server", fullurl)
         //render sessionResp 
         
-		redirect(controller:"main", action:"index") 
+		redirect(controller:"main", action:"demo") 
 	}
   	
   	def logout () {
@@ -39,7 +39,7 @@ class InBloomAPIController {
         } 
         if (json.get("logout") == true) {
         	session.invalidate()
-        	redirect(controller:"main", action:"index")
+        	redirect(controller:"main", action:"login")
         } // else logout failed
     }
   	

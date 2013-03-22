@@ -17,6 +17,7 @@
 
 		<g:layoutHead/>
 		<r:layoutResources />
+		<g:javascript src="Chart.js" />		
 	</head>
 	<body>
         <g:if test="${session.token}">
@@ -26,12 +27,16 @@
 			<g:render template="/shared/header-login" />
         </g:else>
 
+     <div class="container">
+      <div class="row">
         <g:layoutBody/>
 
-        <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+      </div>
+    </div>
+
+
 
 		<g:javascript library="application"/>
-
 		<r:layoutResources />
 	</body>
 </html>

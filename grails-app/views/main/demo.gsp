@@ -2,16 +2,17 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>ClassCartographer</title>
+		<title>Class Cartography</title>
 	</head>
 	<body>
     <div id="sidebar" class="span3">
-      <g:render template="/user/sidebar" />
+      <g:render template="/user/scrollingSidebar" />
     </div>
     <div id="student_stats_window" class="span9">
       <div id="graph_area" class="row">
         <div class="span9">
-          <g:render template="/user/graph" />
+          <g:render template="/user/chartjsgraph" />        
+          <!--<g:render template="/user/graph" />-->
         </div>
       </div>
 
@@ -19,7 +20,7 @@
 
       <div id="feedback_overview_area" class="row">
         <div id="student_feed" class="span5">
-          <h4>Latest Feedback</h4>  
+          <h4>Most Recent Comments</h4>  
           <blockquote>
             [Sample of text from student's latest feedback response.]
             <small>Sep. 23</small>
@@ -40,13 +41,13 @@
             <div id="word_frequency">
               <h4>Word Frequency</h4>
               <div class="progress progress-info">
-                <div class="bar" style="width: 40%">confused : 40x</div>
+                <div class="bar" style="width: 60%">confused : 30x</div>
               </div>
               <div class="progress progress-info">
-                <div class="bar" style="width: 60%">algebra : 60x</div>
+                <div class="bar" style="width: 80%">shakespeare :40x</div>
               </div>
               <div class="progress progress-info">
-                <div class="bar" style="width: 33%">homework : 33x</div>
+                <div class="bar" style="width: 53%">homework : 28x</div>
               </div>
             </div>
 

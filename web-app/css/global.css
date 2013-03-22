@@ -25,12 +25,16 @@
 
 body {
   padding-top: 90px;
+	font-family: "Quicksand_Book";	
 }
 
 .gravatar {
   border: 1px solid #d44413;
 }
 
+h4 {
+	font-size:16px;
+}
 
 /*
  * Sidebar Roster
@@ -38,7 +42,9 @@ body {
 
 #roster { }
 
-#roster .student .student_name { font-size: 1.5em; }
+#roster .student .student_name { 
+	font-size: 14px; 
+}
 
 
 /*
@@ -137,4 +143,226 @@ a.login-logo {
 	text-decoration:none;
 	text-transform:uppercase;
 	font-size:28px;
+}
+
+.navbar .brand-cc {
+  display: block;
+  float: left;
+  padding: 2px 20px 0px 0px;
+}
+
+.lineChartHeading {
+	font-size:20px;
+	display:block;
+	padding:0 0 14px 32px;
+}
+
+.lineChartHeading a {
+	text-decoration:underline;
+	color:black;
+}
+
+.lineChartTable {
+	display:table;	
+	text-align:center;
+	width:100%;
+	padding-top:10px;
+}
+
+.lineChartRow {
+	display:table-row;
+}
+
+.lineChartCell1 {
+	display:table-cell;
+	width:300px;
+}
+
+.lineChartCell2 {
+	display:table-cell;
+	width:20px;
+	background-color:#14a5d7;	
+}
+
+.lineChartCell3 {
+	display:table-cell;
+	width:200px;
+	text-align:left;
+	padding-left:20px;
+	font-size:10px;	
+}
+
+.lineChartCell4 {
+	display:table-cell;
+	width:20px;
+	background-color:#a5d714;
+}
+
+.lineChartCell5 {
+	display:table-cell;
+	width:300px;
+	text-align:left;
+	padding-left:20px;	
+	font-size:10px;	
+}
+
+#graph_area {
+	padding-bottom:-20px;
+	margin-bottom:-20px;
+}
+
+.pieChartHeading {
+	font-size:16px;
+	font-family: "Quicksand_Book";	
+}
+
+.pieChartTable {
+	display:table;	
+	text-align:center;
+	width:100%;
+	padding-top:10px;
+}
+
+.pieChartRow {
+	display:table-row;
+}
+
+.pieChartCell1 {
+	display:table-cell;
+	width:60px;
+}
+
+.pieChartCell2 {
+	display:table-cell;
+	width:20px;
+	background-color:#14a5d7;	
+}
+
+.pieChartCell3 {
+	display:table-cell;
+	width:80px;
+	text-align:left;
+	padding-left:20px;	
+}
+
+.pieChartCell4 {
+	display:table-cell;
+	width:20px;
+	background-color:#d71444;
+}
+
+.pieChartCell5 {
+	display:table-cell;
+	width:180px;
+	text-align:left;
+	padding-left:20px;	
+}
+
+.notificationHeading {
+	font-size:16px;
+	font-family: "Quicksand_Book";	
+}
+
+
+#wrapper {
+	width:100%;
+	height:300px;
+	background:#555;
+}
+
+#scroller {
+	position:relative;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	width:100%;
+	padding:0;
+}
+
+#scroller ul {
+	position:relative;
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#scroller li {
+	display:block;
+	vertical-align:top;
+	padding:0px;
+	height:70px;
+	line-height:18px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	background-color:#fff;
+	font-size:12px;
+}
+
+#scroller li > a {
+	display:block;
+}
+
+.img-padding-right {
+	padding: 0 10px 0 0;
+}
+
+.commentHeading {
+	font-size:16px;
+	font-family: "Quicksand_Book";	
+}
+
+#commentWrapper {
+	width:100%;
+	height:300px;
+	background:#555;
+}
+
+#commentScroller {
+	position:relative;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	width:100%;
+	padding:0;
+}
+
+#commentScroller ul {
+	position:relative;
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:100%;
+	text-align:left;
+}
+
+#commentScroller li {
+	display:block;
+	vertical-align:top;
+	padding:0px;
+	height:100px;
+	line-height:20px;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #fff;
+	background-color:#fff;
+	font-size:12px;
+}
+
+.commentSubject {
+	display:block;
+	font-family: "Quicksand_Book";	
+	font-size:16px;
+}
+
+.commentDateTime {
+	display:block;
+	font-family: "Quicksand_Book";	
+	font-size:10px;
+}
+
+#student_feed {
+	padding-left:0px;
+}
+
+legend {
+	font-size:16px;
 }

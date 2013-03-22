@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Class Cartogaphy :: Surveys</title>
+		<title>Class Cartography :: Feedback</title>
 	</head>
 	<body>
     <div id="survey_list" class="span3">
@@ -11,11 +11,11 @@
          </fieldset>
       <table class="table table-striped table-hover table-bordered">
         <tbody>
-          <tr><td>Math - 3rd Grade</td></tr> 
-          <tr><td>Math - 4th Grade</td></tr> 
-          <tr><td>English - 2nd Grade</td></tr> 
-          <tr><td>English - 3rd Grade</td></tr> 
-          <tr><td><button class="btn btn-primary">New Survey</button></td></tr> 
+          <tr><td>6th Grade English - Sec 4</td></tr> 
+          <tr><td>8th Grade English - Sec 6</td></tr> 
+          <tr><td>7th Grade English - Sec 5</td></tr> 
+          <tr><td>7th Grade Math - Sec 2</td></tr> 
+          <tr><td>6th Grade Math - Sec 1</td></tr> 
         </tbody>
       </table>
     </div>
